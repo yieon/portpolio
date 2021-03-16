@@ -729,6 +729,9 @@ section.contact-me {
     .menu {
         left: 0%;
     }
+    .menu-open {
+        left: 80% !important;
+    }
 
     .right-image-post h4,
     .left-image-post h4 {
