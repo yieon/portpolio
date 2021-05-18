@@ -318,7 +318,7 @@ html {
 .section-left span {
     display: block;
     text-align: left;
-    margin-left: 30%;
+    margin-left: 1.5%;
     font-size: 14px;
 }
 
@@ -900,13 +900,26 @@ section.contact-me {
 .timeline > li > .timeline-panel {
     width: 40%;
     float: left;
-    border: 1px solid #d4d4d4;
+    background-color: rgba(250, 250, 250, 0.1);
+    /*border: 1px solid #d4d4d4;*/
     padding: 30px;
     position: relative;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     border-radius: 4px;
+    transition: all 0.5s;
+}
+
+.timeline > li > .timeline-panel:hover {
+    background-color: #e8e8e8;
+}
+
+.timeline > li > .timeline-panel:hover > div > h3,
+.timeline > li > .timeline-panel:hover > div > h5,
+.timeline > li > .timeline-panel:hover > div > span,
+.timeline > li > .timeline-panel:hover > div > span > p {
+    color: #2e2e2e;
 }
 .timeline > li > .timeline-panel:before {
     position: absolute;
@@ -925,8 +938,8 @@ section.contact-me {
     right: -14px;
     display: inline-block;
     border-top: 14px solid transparent;
-    border-left: 14px solid #fff;
-    border-right: 0 solid #fff;
+    border-left: 14px solid rgba(250, 250, 250, 0.1);
+    border-right: 0 solid rgba(250, 250, 250, 0.1);
     border-bottom: 14px solid transparent;
     content: " ";
 }
@@ -1025,13 +1038,12 @@ section.contact-me {
 }
 
 .timeline-card {
-    cursor: pointer;
     position: relative;
     z-index: 2;
 	height: 100%;
 	width: 100%;
 	border-radius: 15px;
-	background-color: rgba(250,250,250,0.4);
+	background-color: #e8e8e8;
 	padding: 10px;
 	display: inline-block;
 	margin-top: 30px;
@@ -1046,54 +1058,12 @@ section.contact-me {
     border: 1px solid rgba(0,0,0,0.06);
 }
 
-.timeline-card-circle{
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #504bff, 0 0 20px #504bff, 0 0 30px #504bff;
-    transition: all 0.5s ease;
-}
-
-.timeline-card-circle2{
-    top: auto;
-    bottom: 0;
-}
-
-.timeline-card-circle3{
-    left: auto;
-    right: 0;
-    box-shadow: 0 0 10px #4cfa63, 0 0 20px #4cfa63, 0 0 30px #4cfa63;
-}
-
-.timeline-card-circle4{
-    left: auto;
-    top: auto;
-    bottom: 0;
-    right: 0;
-    box-shadow: 0 0 10px #4cfa63, 0 0 20px #4cfa63, 0 0 30px #4cfa63;
+.timeline-card:hover {
+    background-color: rgba(250, 250, 250, 0.1);
 }
 
 .timeline-card:hover{
     box-shadow: -15px 0 70px -15px #504bff, 15px 0 70px -15px #4cfa63;
-}
-
-.timeline-card:hover .timeline-card-circle1{
-    transform: translate(-15px, -15px) scale(0);
-}
-
-.timeline-card:hover .timeline-card-circle2{
-    transform: translate(-15px, 15px) scale(0);
-}
-
-.timeline-card:hover .timeline-card-circle3{
-    transform: translate(15px, -15px) scale(0);
-}
-
-.timeline-card:hover .timeline-card-circle4{
-    transform: translate(15px, 15px) scale(0);
 }
 
 .timeline-card:hover .timeline-card-circle{
@@ -1188,4 +1158,29 @@ section.contact-me {
     display: block;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(250, 250, 250, 0.25);
+}
+
+/* 3 Pre-loader
+----------------------------------------------------------------------------- */
+.animationload {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#fff; /* change if the mask should have another color then white */
+    z-index:999999;
+}
+.loader {
+    width:200px;
+    height:200px;
+    font-size: 24px;
+    text-align: center;
+    position:absolute;
+    left:50%;
+    top:50%;
+    background-image:url('/assets/images/loading.gif');
+    background-repeat:no-repeat;
+    background-position:center;
+    margin:-100px 0 0 -100px;
 }
